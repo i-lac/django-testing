@@ -9,20 +9,26 @@ from django.db.models.functions import Lower # Returns lower cased value of fiel
 
 class Genre(models.Model):
     """Model representing a book genre."""
+    # The name field is a CharField with a maximum length of 200 characters and is unique, 
+    # meaning that no two Genre instances can have the same name. 
+    # The help_text argument provides a description of the field that will be displayed in the admin interface.
     name = models.CharField(
         max_length=200,
         unique=True,
         help_text="Enter a book genre (e.g. Science Fiction, French Poetry etc.)"
     )
 
+    # __str__() is a special method in Python that is used to define the string representation of an object.
     def __str__(self):
         """String for representing the Model object."""
         return self.name
 
     def get_absolute_url(self):
         """Returns the url to access a particular genre instance."""
+        # reverse() takes the name of a URL pattern and returns the actual URL for that pattern
         return reverse('genre-detail', args=[str(self.id)])
 
+    # The Meta class is used to define metadata for the model, such as ordering and constraints.
     class Meta:
         constraints = [
             UniqueConstraint(
@@ -95,7 +101,6 @@ class Book(models.Model):
 import uuid # Required for unique book instances
 
 class BookInstance(models.Model):
-
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)."""
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,
                           help_text="Unique ID for this particular book across whole library")
