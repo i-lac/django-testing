@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 # Create your views here.
 
+has_sandwich = False
+
 def htmxhome(request):
     """View function for home page of site."""
 
@@ -11,10 +13,23 @@ def htmxhome(request):
 def sandwich(request):
     """View function for sandwich request."""
 
+    global has_sandwich
+    has_sandwich = True
     print('sending over the sandwich!')
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'sandwich.html', context={'sandwich': '🥪 yum'})
+
+def check_sandwich(request):
+    """View function for checking if sandwich is available."""
+
+    global has_sandwich
+    if has_sandwich:
+        print('has sandwich yes!')
+        return render(request, 'check_sandwich.html', context={'sandwich_status': 'yes :) yay'})
+    else:
+        print('no sandwich! aaaahhhhh!!!!!!')
+        return render(request, 'check_sandwich.html', context={'sandwich_status': 'no TT_TT what the flip...'})
 
 from django.http import HttpResponse
 
