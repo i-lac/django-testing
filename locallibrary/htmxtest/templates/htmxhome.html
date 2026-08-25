@@ -16,9 +16,16 @@
 
   </div>
   <p>------------------</p>
+  <!-- https://webwithdjango.com/the-ultimate-guide-to-htmx-in-django-simplify-your-frontend-with-ease/ -->
   <button hx-get="{% url 'hello' %}" hx-trigger="click" hx-target="#greeting" hx-swap="innerHTML">
     Say Hello
   </button>
-  <div id="greeting"><p>I used to say something else</p></div>
+  <div id="greeting"><p>I am about to say something</p></div>
   <p>------------------</p>
+  <form hx-post="{% url 'submit_form' %}" hx-target="#form-container" hx-swap="innerHTML">
+    {% csrf_token %} <!-- THAT TEMPLATE TAG IS REQUIRED FOR POST REQUESTS bc of some security thing idk -->
+    <input type="text" name="name" placeholder="Enter your name">
+    <button type="submit">Submit</button>
+  </form>
+  <div id="form-container"></div>
 {% endblock %}

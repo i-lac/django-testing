@@ -18,3 +18,11 @@ from django.http import HttpResponse
 
 def hello(request):
     return HttpResponse("<p>Hello from Django!</p>")
+
+def submit_form(request):
+    if request.method == "POST":
+        name = request.POST.get("name", "")
+        greeting = f"Hello, {name}!"
+        return HttpResponse(f"<p>{greeting}</p>")
+    return HttpResponse("<p>Please enter your name.</p>")
+
