@@ -4,4 +4,5 @@ from . import views
 # home page
 urlpatterns = [
     path('', views.htmxhome, name='htmxhome'),
+    path('sandwich/', views.sandwich, name='sandwich'),
 ]

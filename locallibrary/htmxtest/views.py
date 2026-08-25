@@ -7,3 +7,9 @@ def htmxhome(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'htmxhome.html', context={})
+
+def sandwich(request):
+    """View function for sandwich request."""
+
+    # Render the HTML template index.html with the data in the context variable
+    return render(request, 'sandwich.html', context={'response': '🥪 yum'})
