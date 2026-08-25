@@ -13,3 +13,8 @@ def sandwich(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'sandwich.html', context={'response': '🥪 yum'})
+
+from django.http import HttpResponse
+
+def hello(request):
+    return HttpResponse("<p>Hello from Django!</p>")
