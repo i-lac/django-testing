@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'catalog.apps.CatalogConfig', # This object was created for us in the catalog/apps.py file. It is used to configure some of the attributes of the catalog application.
+    'htmxtest.apps.HtmxtestConfig',
 ]
 
 MIDDLEWARE = [
