@@ -11,8 +11,10 @@ def htmxhome(request):
 def sandwich(request):
     """View function for sandwich request."""
 
+    print('sending over the sandwich!')
+
     # Render the HTML template index.html with the data in the context variable
-    return render(request, 'sandwich.html', context={'response': '🥪 yum'})
+    return render(request, 'sandwich.html', context={'sandwich': '🥪 yum'})
 
 from django.http import HttpResponse
 

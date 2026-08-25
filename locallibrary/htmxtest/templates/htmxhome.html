@@ -6,9 +6,11 @@
 
 {% block content %}
   <h1>Go my tests</h1>
-  <button>Get me a sandwich</button>
+  <button hx-get="{% url 'sandwich' %}" hx-target="#sandwich" hx-swap="innerHTML">
+    Get me a sandwich
+  </button>
   <div id="sandwich">
-    
+    <p>No sandwich 😢</p>
   </div>
   <p>------------------</p>
   <button>Do i have sandwich?</button>
