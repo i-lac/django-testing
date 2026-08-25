@@ -15,8 +15,10 @@
   <div id="sandwichcheck">
 
   </div>
+  <p>------------------</p>
   <button hx-get="{% url 'hello' %}" hx-trigger="click" hx-target="#greeting" hx-swap="innerHTML">
     Say Hello
   </button>
   <div id="greeting"><p>I used to say something else</p></div>
+  <p>------------------</p>
 {% endblock %}
