@@ -26,6 +26,7 @@ from django.urls import include
 
 urlpatterns += [
     path('catalog/', include('catalog.urls')),
+    path('htmxtest/', include('htmxtest.urls')),
 ]
 
 # Add URL maps to redirect the base URL to our application

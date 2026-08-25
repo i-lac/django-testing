@@ -1,0 +1,7 @@
+from django.urls import path
+from . import views
+
+# home page
+urlpatterns = [
+    path('', views.htmxhome, name='htmxhome'),
+]
