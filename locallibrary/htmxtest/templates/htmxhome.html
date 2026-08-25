@@ -15,4 +15,8 @@
   <div id="sandwichcheck">
 
   </div>
+  <button hx-get="/hello/" hx-trigger="click" hx-target="#greeting" hx-swap="innerHTML">
+    Say Hello
+  </button>
+  <div id="greeting"></div>
 {% endblock %}
