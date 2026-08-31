@@ -6,6 +6,8 @@ Follow the instructions under the "Using Django inside a Python virtual environm
 
 Do so to ensure a consistent dev environment between python projects (I'm pretty sure).
 
+> WHEN USING TERMINAL COMMAND INSIDE A VENV, USE THE `python` COMMAND AND NOT YOUR SYSTEM'S ONE (like `py`, don't use that). I think.
+
 ## Install packages
 
 Run the following in your terminal to install the required packages for this project:
