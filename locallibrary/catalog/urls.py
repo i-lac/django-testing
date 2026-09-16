@@ -27,3 +27,7 @@ Avoids hardcoding URLs!
 urlpatterns += [
     path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
 ]
+
+urlpatterns += [
+    path('allborrowed/', views.LoanedBooksAllListView.as_view(), name='all-borrowed'),
+]
