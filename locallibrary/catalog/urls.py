@@ -23,3 +23,7 @@ link to our home page from any other page by adding the following link in a temp
 
 Avoids hardcoding URLs!
 """
+
+urlpatterns += [
+    path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+]
