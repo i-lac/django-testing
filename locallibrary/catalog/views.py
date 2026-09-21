@@ -45,19 +45,19 @@ from django.views import generic
 
 class BookListView(generic.ListView):
     model = Book
-    paginate_by = 1
+    paginate_by = 10
 
 class BookDetailView(generic.DetailView):
     model = Book
-    paginate_by = 1
+    paginate_by = 10
 
 class AuthorListView(generic.ListView):
     model= Author
-    paginate_by = 1
+    paginate_by = 10
 
 class AuthorDetailView(generic.DetailView):
     model = Author
-    paginate_by = 1
+    paginate_by = 10
 
 from django.contrib.auth.mixins import LoginRequiredMixin
 
